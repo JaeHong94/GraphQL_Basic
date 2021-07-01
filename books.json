@@ -12,5 +12,19 @@
     "message": "message test2",
     "author": "JaeHong",
     "url": "url test2"
+  },
+  {
+    "title": "title test3",
+    "message": "message test3",
+    "author": "author test3",
+    "url": "url test3",
+    "bookId": 3
+  },
+  {
+    "bookId": 4,
+    "title": "title test4",
+    "message": "message test4",
+    "author": "author test4",
+    "url": "url test4"
   }
 ]
