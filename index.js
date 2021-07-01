@@ -1,10 +1,21 @@
 const { ApolloServer, gql } = require('apollo-server');
+const { readFileSync } = require('fs');
+const { join } = require('path');
 
 // The GraphQL schema
 const typeDefs = gql`
   type Query {
     "A simple type for getting started!"
     hello: String
+    books: [Book]
+    book(bookId: Int): Book
+  }
+  type Book {
+    bookId: Int
+    title: String
+    message: String
+    author: String
+    url: String
   }
 `;
 
@@ -12,6 +23,15 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     hello: () => 'world',
+    books: () => {
+      return JSON.parse(readFileSync(join(__dirname, 'books.json')).toString());
+    },
+    book: (parent, args, context, info) => {
+      const books = JSON.parse(
+        readFileSync(join(__dirname, 'books.json')).toString()
+      );
+      return books.find((book) => book.bookId === args.bookId);
+    },
   },
 };
 

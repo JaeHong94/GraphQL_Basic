@@ -1,0 +1,16 @@
+[
+  {
+    "bookId": 1,
+    "title": "title test",
+    "message": "message test",
+    "author": "JaeHong",
+    "url": "url test"
+  },
+  {
+    "bookId": 2,
+    "title": "title test2",
+    "message": "message test2",
+    "author": "JaeHong",
+    "url": "url test2"
+  }
+]
